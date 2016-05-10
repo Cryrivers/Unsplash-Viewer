@@ -7,7 +7,7 @@ module.exports = function(environment) {
     contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com" },
     firebase: 'https://flickering-heat-9279.firebaseio.com/',
     baseURL: '/',
-    locationType: process.env.EMBER_CLI_ELECTRON ? 'hash' : 'auto',
+    locationType: (process.env.EMBER_CLI_ELECTRON || process.env.EMBER_CORDOVA) ? 'hash' : 'auto',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

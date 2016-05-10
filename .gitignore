@@ -18,3 +18,11 @@ testem.log
 
 # webstorm
 /.idea
+
+# cordova
+*.mode1v3
+*.perspectivev3
+*.pbxuser
+ember-cordova/cordova/www
+ember-cordova/cordova/platforms
+ember-cordova/cordova/plugins
