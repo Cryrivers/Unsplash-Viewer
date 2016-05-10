@@ -3,53 +3,53 @@ import Ember from 'ember';
 export default Ember.Service.extend({
   initPlatformClassNames() {
     const htmlTagClassList = document.querySelector('html').classList;
-    if (this.iOS()) {
+    if (this.get('isiOS')) {
       htmlTagClassList.add('platform-ios');
     }
-    if (this.isAndroid()) {
+    if (this.get('isAndroid')) {
       htmlTagClassList.add('platform-android');
     }
-    if (this.isElectron()) {
+    if (this.get('isElectron')) {
       htmlTagClassList.add('platform-electron');
     }
-    if (this.isWindows()) {
+    if (this.get('isWindows')) {
       htmlTagClassList.add('platform-windows');
     }
-    if (this.isLinux()) {
+    if (this.get('isLinux')) {
       htmlTagClassList.add('platform-linux');
     }
-    if (this.isMacOSX()) {
+    if (this.get('isMacOSX')) {
       htmlTagClassList.add('platform-macosx');
     }
   },
-  iOS() {
+  isiOS: Ember.computed(function() {
     return false;
-  },
-  isAndroid() {
+  }),
+  isAndroid: Ember.computed(function() {
     return false;
-  },
-  isElectron() {
+  }),
+  isElectron: Ember.computed(function() {
     return Boolean(window.ELECTRON);
-  },
-  isWindows() {
+  }),
+  isWindows: Ember.computed(function() {
     if (window.ELECTRON) {
       const process = window.requireNode('process');
       return process.platform === 'win32';
     }
     return false;
-  },
-  isLinux() {
+  }),
+  isLinux: Ember.computed(function() {
     if (window.ELECTRON) {
       const process = window.requireNode('process');
       return process.platform === 'linux';
     }
     return false;
-  },
-  isMacOSX() {
+  }),
+  isMacOSX: Ember.computed(function() {
     if (window.ELECTRON) {
       const process = window.requireNode('process');
       return process.platform === 'darwin';
     }
     return false;
-  }
+  })
 });
