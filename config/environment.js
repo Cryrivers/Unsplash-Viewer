@@ -4,8 +4,10 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'wora',
     environment: environment,
+    contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com" },
+    firebase: 'https://flickering-heat-9279.firebaseio.com/',
     baseURL: '/',
-    locationType: 'auto',
+    locationType: process.env.EMBER_CLI_ELECTRON ? 'hash' : 'auto',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
