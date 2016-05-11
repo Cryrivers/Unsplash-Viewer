@@ -10,7 +10,7 @@ const emberAppLocation = `file://${dirname}/dist/index.html`;
 
 let mainWindow = null;
 
-electron.crashReporter.start();
+// electron.crashReporter.start();
 
 app.on('window-all-closed', function onWindowAllClosed() {
   if (process.platform !== 'darwin') {
