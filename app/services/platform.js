@@ -14,6 +14,17 @@ export default Ember.Service.extend({
     }
     if (this.get('isElectron')) {
       htmlTagClassList.add('platform-electron');
+      // Do some class name bindings
+      const remote = window.requireNode('electron').remote;
+      const browserWindow = remote.getCurrentWindow();
+      browserWindow.removeAllListeners();
+      // Bind onFocus and onBlur event
+      browserWindow.on('focus', ()=> {
+        htmlTagClassList.remove('is-blurred');
+      });
+      browserWindow.on('blur', ()=> {
+        htmlTagClassList.add('is-blurred');
+      });
     }
     if (this.get('isWindows')) {
       htmlTagClassList.add('platform-windows');
