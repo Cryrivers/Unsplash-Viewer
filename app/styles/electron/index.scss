@@ -3,4 +3,6 @@ html.platform-electron {
     user-select: none;
   }
 }
-
+html.platform-macosx {
+  @import "macosx/index";
+}
