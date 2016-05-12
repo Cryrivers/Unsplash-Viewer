@@ -9,7 +9,11 @@ export default Ember.Component.extend({
       currentBrowserWindow.minimize();
     },
     maximize() {
-      currentBrowserWindow.isMaximized() ? currentBrowserWindow.unmaximize() : currentBrowserWindow.maximize();
+      if (currentBrowserWindow.isMaximized()) {
+        currentBrowserWindow.unmaximize();
+      } else {
+        currentBrowserWindow.maximize();
+      }
     },
     close() {
       currentBrowserWindow.close();
