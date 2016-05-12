@@ -1,8 +1,8 @@
-html.platform-electron {
+body.platform-electron {
   *:not(input):not(textarea) {
     user-select: none;
   }
 }
-html.platform-macosx {
+body.platform-macosx {
   @import "macosx/index";
 }

@@ -1,0 +1,7 @@
+body.platform-browser {
+  & {
+    background: #f6f6f6;
+  }
+  @import "components/header-bar";
+  @import "components/picture-grid";
+}

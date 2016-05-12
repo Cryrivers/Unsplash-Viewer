@@ -1,0 +1,5 @@
+<div class="picture-grid">
+    {{#each model as |image|}}
+      <img src="{{image.urls.small}}" {{action 'visitDetailPage' image.id}} data-picture-id="{{image.id}}" class="picture-grid__item">
+    {{/each}}
+</div>

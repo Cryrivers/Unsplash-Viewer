@@ -1,0 +1,10 @@
+.picture-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 100vh;
+  overflow-y: scroll;
+  &__item {
+    object-fit: cover;
+  }
+}
