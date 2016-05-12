@@ -1,0 +1,12 @@
+@import "../constants";
+.picture-grid {
+  padding-top: $header-bar-height;
+  justify-content: space-around;
+  -webkit-overflow-scrolling: touch;
+  &__item {
+    width: 186px;
+    height: 186px;
+    margin-top: 1px;
+    object-fit: cover;
+  }
+}

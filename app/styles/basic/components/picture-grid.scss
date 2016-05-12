@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
   overflow-y: scroll;
   &__item {
     object-fit: cover;

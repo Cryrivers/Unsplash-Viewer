@@ -13,7 +13,6 @@
   <plugin name="cordova-plugin-wkwebview-engine" spec="~1.0.3"/>
   <access origin="*"/>
   <allow-navigation href="*"/>
-  <preference name="DisallowOverscroll" value="true" />
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>
   <allow-intent href="tel:*"/>

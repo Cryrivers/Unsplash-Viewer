@@ -1,0 +1,9 @@
+@import "components/header-bar";
+@import "components/window-buttons";
+@import "components/picture-grid";
+& {
+  font: -apple-system-caption1;
+}
+[data-ember-action] {
+  cursor: pointer;
+}

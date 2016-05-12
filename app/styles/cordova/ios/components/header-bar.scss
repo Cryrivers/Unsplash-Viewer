@@ -1,0 +1,11 @@
+@import "../constants";
+.header-bar {
+  height: $header-bar-height;
+  background: fade-out(#f9f9f9, 0.15);
+  backdrop-filter: blur(15px) saturate(2);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.20);
+  transition: background 0.3s ease;
+  html.route-detail & {
+    background: fade-out(#000, 0.4);
+  }
+}
