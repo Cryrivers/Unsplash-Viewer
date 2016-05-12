@@ -1,5 +1,13 @@
 <div class="picture-grid">
-    {{#each model as |image|}}
-      <img src="{{image.urls.small}}" {{action 'visitDetailPage' image.id}} data-picture-id="{{image.id}}" class="picture-grid__item">
-    {{/each}}
+  {{#each model as |image|}}
+      <div class="picture-grid__item">
+          <img class="picture-grid__item__photo" {{action 'visitDetailPage' image.id}} data-picture-id="{{image.id}}" src="{{image.urls.small}}">
+          <div class="picture-grid__item__meta">
+              <div class="picture-grid__item__meta__avatar">
+                  <img class="picture-grid__item__meta__avatar__photo" src="{{image.user.profile_image.medium}}">
+              </div>
+              <div class="picture-grid__item__meta__username">{{image.user.name}}</div>
+          </div>
+      </div>
+  {{/each}}
 </div>

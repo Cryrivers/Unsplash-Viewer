@@ -4,9 +4,43 @@
   justify-content: space-around;
   -webkit-overflow-scrolling: touch;
   &__item {
-    width: 186px;
-    height: 186px;
-    margin-top: 1px;
-    object-fit: cover;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    &__meta {
+      display: flex;
+      position: sticky;
+      height: 40px;
+      order: 0;
+      top: 0;
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(10px) saturate(2);
+      box-shadow: 0 1px 0 rgba(255,255,255,0.5);
+      align-items: center;
+      &__avatar {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-left: 10px;
+        &__photo {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &__username {
+        font: -apple-system-caption1;
+        font-weight: bold;
+        color: #3c3c3c;
+        margin-left: 10px;
+      }
+    }
+    &__photo {
+      order: 1;
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
   }
 }
