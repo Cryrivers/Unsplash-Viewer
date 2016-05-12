@@ -1,0 +1,55 @@
+.window-buttons {
+  margin-top: 10px;
+  margin-left: 8px;
+  order: -1000;
+  min-width: 72px;
+  width: 72px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  display: flex;
+  &__button {
+    -webkit-app-region: no-drag;
+    display: inline-block;
+    padding: 0;
+    width: 12px;
+    height: 12px;
+    margin: 4px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 12px 48px;
+    border: 0;
+    &:hover {
+      background-position: 0 -12px;
+    }
+    &:active {
+      background-position: 0 -24px;
+    }
+    html.is-blurred & {
+      background-position: 0 -36px;
+    }
+    &--close {
+      background-image: url('../images/macosx/close@1x.png');
+      order: 0;
+    }
+    &--minimize {
+      background-image: url('../images/macosx/minimize@1x.png');
+      order: 1;
+    }
+    &--maximize {
+      background-image: url('../images/macosx/maximize@1x.png');
+      order: 2;
+    }
+    @media (-webkit-min-device-pixel-ratio: 2) {
+      &--close {
+        background-image: url('../images/macosx/close@2x.png');
+      }
+      &--minimize {
+        background-image: url('../images/macosx/minimize@2x.png');
+      }
+      &--maximize {
+        background-image: url('../images/macosx/maximize@2x.png');
+      }
+    }
+  }
+}
