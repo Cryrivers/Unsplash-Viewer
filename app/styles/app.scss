@@ -1,5 +1,5 @@
 @import 'common';
-@import 'basic/basic';
-@import 'electron/electron';
-@import 'cordova/cordova';
-@import 'browser/browser';
+@import 'basic/index';
+@import 'electron/index';
+@import 'cordova/index';
+@import 'browser/index';
