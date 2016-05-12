@@ -37,17 +37,17 @@ export default Ember.Service.extend({
     }
   },
   isCordova: Ember.computed(function() {
-    return Boolean(window.cordova && window.device);
+    return Boolean(window.cordova);
   }),
   isiOS: Ember.computed(function() {
-    if (window.cordova && window.device) {
-      return window.device.platform === 'iOS';
+    if (window.cordova) {
+      return window.cordova.platformId === 'ios';
     }
     return false;
   }),
   isAndroid: Ember.computed(function() {
-    if (window.cordova && window.device) {
-      return window.device.platform === 'Android';
+    if (window.cordova) {
+      return window.cordova.platformId === 'android';
     }
     return false;
   }),

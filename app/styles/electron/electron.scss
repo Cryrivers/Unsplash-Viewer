@@ -1,0 +1,5 @@
+html.platform-electron {
+  *:not(input):not(textarea) {
+    user-select: none;
+  }
+}
