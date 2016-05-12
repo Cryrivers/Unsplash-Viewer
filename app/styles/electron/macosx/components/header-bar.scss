@@ -1,18 +1,22 @@
+@import "../constants";
 .header-bar {
-  height: 38px;
+  height: $header-bar-height;
   background: linear-gradient(
-      fade-out(#ececec, 0.1) 0%,
-      fade-out(#ececec, 0.1) 1.9%,
-      fade-out(#e9e9e9, 0.1) 2%,
-      fade-out(#d2d2d2, 0.1) 100%
+      fade-out(#ececec, 0.15) 0%,
+      fade-out(#ececec, 0.15) 1.9%,
+      fade-out(#e9e9e9, 0.15) 2%,
+      fade-out(#d2d2d2, 0.15) 100%
   );
   -webkit-app-region: drag;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px) saturate(2);
   color: #434648;
   html.is-blurred & {
     background: linear-gradient(
-        fade-out(#f6f6f6, 0.1) 0%,
-        fade-out(#f6f6f6, 0.1) 100%
+        fade-out(#f6f6f6, 0.15) 0%,
+        fade-out(#f6f6f6, 0.15) 100%
     );
+  }
+  html.route-detail & {
+    background: rgba(0,0,0,0.7);
   }
 }

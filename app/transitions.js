@@ -4,9 +4,9 @@ export default function() {
     this.toRoute('detail'),
     this.useAndReverse('explode', {
       matchBy: 'data-picture-id',
-      use: ['fly-to', {duration: 400, easing: 'ease'}]
+      use: ['fly-to', {duration: 300}]
     }, {
-      use: ['fade']
+      use: ['fade', {duration: 300}]
     })
   );
 }
