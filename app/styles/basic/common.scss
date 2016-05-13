@@ -9,7 +9,3 @@ body {
 body > .ember-view > .liquid-container, body > .ember-view > .liquid-container > .liquid-child {
   height: 100% !important;
 }
-[data-ember-action] {
-  cursor: pointer;
-}
-

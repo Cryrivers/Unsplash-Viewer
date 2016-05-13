@@ -4,6 +4,7 @@ body.platform-cordova {
     -webkit-touch-callout: none;
     -webkit-tap-highlight-color: transparent;
   }
+  @import "common.scss";
 }
 
 body.platform-ios {
