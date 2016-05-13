@@ -3,7 +3,7 @@
 .header-bar {
   height: $header-bar-height;
   background: fade-out(#f9f9f9, 0.15);
-  backdrop-filter: blur(15px) saturate(2);
+  backdrop-filter: blur(20px) saturate(2);
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   transition: background 0.3s ease;
   html.route-detail & {

@@ -13,9 +13,21 @@
   {{/link-to}}
     <div class="tabs__item">
         <div class="tabs__icon">
+          {{inline-svg 'camera'}}
+        </div>
+        <div class="tabs__caption">Camera</div>
+    </div>
+    <div class="tabs__item">
+        <div class="tabs__icon">
             {{inline-svg 'favorite'}}
         </div>
         <div class="tabs__caption">Favorite</div>
+    </div>
+    <div class="tabs__item">
+        <div class="tabs__icon">
+          {{inline-svg 'favorite'}}
+        </div>
+        <div class="tabs__caption">Me</div>
     </div>
 </div>
 {{picture-grid images=model goToDetail=(action 'goToDetailByImage')}}
