@@ -1,13 +1,17 @@
 @import "../constants";
 .picture-grid {
   padding-top: $header-bar-height;
-  padding-bottom: $tab-bar-height;
+  // it is not working
+  //padding-bottom: $tab-bar-height;
   justify-content: space-around;
   -webkit-overflow-scrolling: touch;
   &__item {
     width: 100%;
     display: flex;
     flex-direction: column;
+    &:last-child {
+      margin-bottom: $tab-bar-height;
+    }
     &__meta {
       display: flex;
       position: sticky;
