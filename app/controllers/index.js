@@ -6,8 +6,8 @@ export default Ember.Controller.extend({
   perPage: 30,
   orderBy: 'latest',
   actions: {
-    visitDetailPage(id) {
-      this.transitionToRoute('detail', id);
+    goToDetailByImage(image) {
+      return this.transitionToRoute('detail', image.id);
     }
   }
 });
