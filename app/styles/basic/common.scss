@@ -1,11 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
 html, body, body > .ember-view {
   height: 100vh;
 }
+
 body {
   transition: background 0.3s ease;
   overflow: hidden;
 }
+
 body > .ember-view > .liquid-container, body > .ember-view > .liquid-container > .liquid-child {
   height: 100% !important;
 }

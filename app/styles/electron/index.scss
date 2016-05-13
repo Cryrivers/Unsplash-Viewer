@@ -1,6 +1,7 @@
 body.platform-electron {
   @import "common";
 }
+
 body.platform-macosx {
   @import "macosx/index";
 }
