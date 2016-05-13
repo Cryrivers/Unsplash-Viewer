@@ -7,18 +7,8 @@ if (platform.isCordova()) {
     this.transition(
       this.fromRoute('index'),
       this.toRoute('detail'),
-      this.use('explode', {
-        matchBy: 'data-picture-id',
-        use: ['fly-to', {duration: 300}]
-      }, {
-        use: ['toLeft', {duration: 300}]
-      }),
-      this.reverse('explode', {
-        matchBy: 'data-picture-id',
-        use: ['fly-to', {duration: 300}]
-      }, {
-        use: ['toRight', {duration: 300}]
-      })
+      this.use('toLeft'),
+      this.reverse('toRight')
     );
   };
 } else {
