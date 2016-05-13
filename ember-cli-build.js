@@ -4,7 +4,33 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
-    // Add options here
+    svg: {
+      optimize: {
+        plugins: [
+          {
+            removeSeveralAttrs: {
+              type: 'perItem',
+              fn: function(item) {
+                item.eachAttr(function(attr) {
+                  if (attr.name === 'id') {
+                    item.removeAttr('id');
+                  }
+                });
+              }
+            }
+          },
+          {
+            removeTitle: true
+          },
+          {
+            removeAttrs: true
+          }
+        ]
+      },
+      paths: [
+        'svg'
+      ]
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated

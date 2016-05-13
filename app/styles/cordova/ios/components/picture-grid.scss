@@ -1,6 +1,7 @@
 @import "../constants";
 .picture-grid {
   padding-top: $header-bar-height;
+  padding-bottom: $tab-bar-height;
   justify-content: space-around;
   -webkit-overflow-scrolling: touch;
   &__item {

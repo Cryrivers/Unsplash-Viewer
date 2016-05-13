@@ -1,1 +1,21 @@
+<div class="tabs">
+  {{#link-to (query-params orderBy='latest') class="tabs__item"}}
+      <div class="tabs__icon">
+          {{inline-svg 'latest'}}
+      </div>
+      <div class="tabs__caption">Latest</div>
+  {{/link-to}}
+  {{#link-to (query-params orderBy='popular') class="tabs__item"}}
+      <div class="tabs__icon">
+        {{inline-svg 'popular'}}
+      </div>
+      <div class="tabs__caption">Popular</div>
+  {{/link-to}}
+    <div class="tabs__item">
+        <div class="tabs__icon">
+            {{inline-svg 'favorite'}}
+        </div>
+        <div class="tabs__caption">Favorite</div>
+    </div>
+</div>
 {{picture-grid images=model goToDetail=(action 'goToDetailByImage')}}
