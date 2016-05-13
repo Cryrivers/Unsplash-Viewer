@@ -1,18 +1,19 @@
 import Ember from 'ember';
+import platform from '../utils/platform';
 
 export default Ember.Service.extend({
   initPlatformClassNames() {
     const htmlTagClassList = document.querySelector('html').classList;
     const bodyTagClassList = document.querySelector('body').classList;
-    if (this.get('isCordova')) {
+    if (platform.isCordova()) {
       bodyTagClassList.add('platform-cordova');
-      if (this.get('isiOS')) {
+      if (platform.isiOS()) {
         bodyTagClassList.add('platform-ios');
       }
-      else if (this.get('isAndroid')) {
+      else if (platform.isAndroid()) {
         bodyTagClassList.add('platform-android');
       }
-    } else if (this.get('isElectron')) {
+    } else if (platform.isElectron()) {
       bodyTagClassList.add('platform-electron');
       // Do some class name bindings
       const remote = window.requireNode('electron').remote;
@@ -26,61 +27,41 @@ export default Ember.Service.extend({
         htmlTagClassList.add('is-blurred');
       });
 
-      if (this.get('isWindows')) {
+      if (platform.isWindows()) {
         bodyTagClassList.add('platform-windows');
       }
-      else if (this.get('isLinux')) {
+      else if (platform.isLinux()) {
         bodyTagClassList.add('platform-linux');
       }
-      else if (this.get('isMacOSX')) {
+      else if (platform.isMacOSX()) {
         bodyTagClassList.add('platform-macosx');
       }
     } else {
       bodyTagClassList.add('platform-browser');
     }
   },
-  isCordova: Ember.computed(function() {
-    return Boolean(window.cordova);
+  cordova: Ember.computed(function() {
+    return platform.isCordova();
   }),
-  isiOS: Ember.computed(function() {
-    if (window.cordova) {
-      return window.cordova.platformId === 'ios';
-    }
-    return false;
+  iOS: Ember.computed(function() {
+    return platform.isiOS();
   }),
-  isAndroid: Ember.computed(function() {
-    if (window.cordova) {
-      return window.cordova.platformId === 'android';
-    }
-    return false;
+  android: Ember.computed(function() {
+    return platform.isAndroid();
   }),
-  isElectron: Ember.computed(function() {
-    return Boolean(window.ELECTRON);
+  electron: Ember.computed(function() {
+    return platform.isElectron();
   }),
-  isWindows: Ember.computed(function() {
-    if (window.ELECTRON) {
-      const process = window.requireNode('process');
-      return process.platform === 'win32';
-    }
-    return false;
+  windows: Ember.computed(function() {
+    return platform.isWindows();
   }),
-  isLinux: Ember.computed(function() {
-    if (window.ELECTRON) {
-      const process = window.requireNode('process');
-      return process.platform === 'linux';
-    }
-    return false;
+  linux: Ember.computed(function() {
+    return platform.isLinux();
   }),
-  isMacOSX: Ember.computed(function() {
-    if (window.ELECTRON) {
-      const process = window.requireNode('process');
-      return process.platform === 'darwin';
-    }
-    return false;
+  macOSX: Ember.computed(function() {
+    return platform.isMacOSX();
   }),
-  isBrowser: Ember.computed('isCordova', 'isElectron', function() {
-    const isCordova = this.get('isCordova');
-    const isElectron = this.get('isElectron');
-    return !isCordova && !isElectron;
+  browser: Ember.computed(function() {
+    return platform.isBrowser();
   })
 });
