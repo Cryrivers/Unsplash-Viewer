@@ -25,7 +25,7 @@
   <platform name="ios">
     <allow-intent href="itms:*"/>
     <allow-intent href="itms-apps:*"/>
-    <icon src="../public/images/ios/ios-icon.png" width="60" height="60" />
-    <icon src="../public/images/ios/ios-icon@2x.png" width="120" height="120" />
+    <icon src="../../public/images/ios/ios-icon.png" width="60" height="60" />
+    <icon src="../../public/images/ios/ios-icon@2x.png" width="120" height="120" />
   </platform>
 </widget>
