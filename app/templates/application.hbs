@@ -1,2 +1,34 @@
 {{header-bar}}
 {{liquid-outlet}}
+<div class="tabs">
+  {{#link-to 'index' (query-params orderBy='latest') class="tabs__item"}}
+      <div class="tabs__icon">
+        {{inline-svg 'latest'}}
+      </div>
+      <div class="tabs__caption">Latest</div>
+  {{/link-to}}
+  {{#link-to 'index' (query-params orderBy='popular') class="tabs__item"}}
+      <div class="tabs__icon">
+        {{inline-svg 'popular'}}
+      </div>
+      <div class="tabs__caption">Popular</div>
+  {{/link-to}}
+    <div class="tabs__item">
+        <div class="tabs__icon">
+          {{inline-svg 'camera'}}
+        </div>
+        <div class="tabs__caption">Camera</div>
+    </div>
+    <div class="tabs__item">
+        <div class="tabs__icon">
+          {{inline-svg 'favorite'}}
+        </div>
+        <div class="tabs__caption">Favorite</div>
+    </div>
+  {{#link-to 'shake' class="tabs__item"}}
+      <div class="tabs__icon">
+        {{inline-svg 'favorite'}}
+      </div>
+      <div class="tabs__caption">Random</div>
+  {{/link-to}}
+</div>

@@ -2,6 +2,10 @@
 @import "components/window-buttons";
 @import "components/picture-grid";
 @import "components/tab";
+@import "components/shakable-image";
 & {
   font: -apple-system-caption1;
+}
+.route-shake & {
+  background: #eee;
 }
