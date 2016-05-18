@@ -1,9 +1,8 @@
 import Ember from 'ember';
-import RecognizerMixin from 'ember-gestures/mixins/recognizers';
 
 const {throttle, debounce} = Ember.run;
 
-export default Ember.Component.extend(RecognizerMixin, {
+export default Ember.Component.extend({
   recognizers: 'pan pinch rotate',
   pictureScale: 1,
   pictureAngle: 0,
