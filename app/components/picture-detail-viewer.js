@@ -1,8 +1,9 @@
 import Ember from 'ember';
 
-const {throttle, debounce} = Ember.run;
+const {throttle} = Ember.run;
 
 export default Ember.Component.extend({
+  classNames: ['picture-detail-viewer'],
   recognizers: 'pan pinch rotate',
   pictureScale: 1,
   pictureAngle: 0,

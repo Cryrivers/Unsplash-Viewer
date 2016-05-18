@@ -25,7 +25,7 @@ app.on('ready', function onReady() {
     height: 800,
     frame: false,
     webPreferences: {
-      blinkFeatures: 'CSSBackdropFilter,CSSBoxReflectFilter'
+      blinkFeatures: 'CSSBoxReflectFilter'
     }
   });
 

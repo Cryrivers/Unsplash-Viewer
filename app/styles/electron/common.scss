@@ -1,3 +1,4 @@
 *:not(input):not(textarea) {
   user-select: none;
+  cursor: default;
 }

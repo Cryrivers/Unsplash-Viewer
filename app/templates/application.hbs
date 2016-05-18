@@ -13,22 +13,26 @@
       </div>
       <div class="tabs__caption">Popular</div>
   {{/link-to}}
-    <div class="tabs__item">
-        <div class="tabs__icon">
-          {{inline-svg 'camera'}}
-        </div>
-        <div class="tabs__caption">Camera</div>
-    </div>
+  {{#if platform.cordova}}
+      <div class="tabs__item">
+          <div class="tabs__icon">
+            {{inline-svg 'camera'}}
+          </div>
+          <div class="tabs__caption">Camera</div>
+      </div>
+  {{/if}}
     <div class="tabs__item">
         <div class="tabs__icon">
           {{inline-svg 'favorite'}}
         </div>
         <div class="tabs__caption">Favorite</div>
     </div>
-  {{#link-to 'shake' class="tabs__item"}}
-      <div class="tabs__icon">
-        {{inline-svg 'random'}}
-      </div>
-      <div class="tabs__caption">Random</div>
-  {{/link-to}}
+  {{#if platform.cordova}}
+    {{#link-to 'shake' class="tabs__item"}}
+        <div class="tabs__icon">
+          {{inline-svg 'random'}}
+        </div>
+        <div class="tabs__caption">Random</div>
+    {{/link-to}}
+  {{/if}}
 </div>
