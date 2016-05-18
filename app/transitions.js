@@ -10,6 +10,10 @@ if (platform.isCordova()) {
       this.use('toLeft'),
       this.reverse('toRight')
     );
+    this.transition(
+      this.hasClass('.header-bar__actions'),
+      this.use('toRight')
+    );
   };
 } else if (platform.isBrowser()) {
   transitionFunction = function () {
@@ -31,6 +35,10 @@ if (platform.isCordova()) {
       this.toRoute('detail'),
       this.use('exit-left', {duration: 800, easing: 'ease'}),
       this.reverse('exit-right', {duration: 800, easing: 'ease'})
+    );
+    this.transition(
+      this.hasClass('header-bar__actions'),
+      this.useAndReverse('fade')
     );
   };
 }

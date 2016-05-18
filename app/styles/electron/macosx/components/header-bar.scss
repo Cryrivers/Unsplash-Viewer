@@ -1,6 +1,7 @@
 @import "../constants";
 .header-bar {
   height: $header-bar-height;
+  align-items: center;
   background: linear-gradient(
       fade-out(#ececec, 0.05) 0%,
       fade-out(#ececec, 0.05) 1.9%,
@@ -18,5 +19,26 @@
   html.route-detail & {
     background: rgba(0,0,0,0.7);
     border-bottom-color: rgba(0,0,0,0.7);
+  }
+  &__action-button {
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    height: 22px;
+    padding: 0 10px;
+    background: #454545;
+    color: #c4c4c4;
+    border-radius: 4px;
+    html.is-blurred & {
+      color: #aaa;
+      svg {
+        fill: #aaa;
+      }
+    }
+    svg {
+      width: 8px;
+      margin-right: 6px;
+      fill: #c4c4c4;
+    }
   }
 }

@@ -19,5 +19,13 @@ export default Ember.Controller.extend({
   init(...args) {
     this._super(...args);
     this.get('platform').initPlatformClassNames();
+  },
+  actions: {
+    shoot() {
+      navigator.camera.getPicture(()=> {
+        alert('This button actually does nothing but take a photo.');
+        navigator.camera.cleanup();
+      });
+    }
   }
 });

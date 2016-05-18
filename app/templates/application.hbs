@@ -1,4 +1,4 @@
-{{header-bar}}
+{{header-bar routeName=currentRouteName}}
 {{liquid-outlet}}
 <div class="tabs">
   {{#link-to 'index' (query-params orderBy='latest') class="tabs__item"}}
@@ -14,11 +14,10 @@
       <div class="tabs__caption">Popular</div>
   {{/link-to}}
   {{#if platform.cordova}}
-      <div class="tabs__item">
+      <div class="tabs__item tabs__item--highlight" {{action 'shoot'}}>
           <div class="tabs__icon">
             {{inline-svg 'camera'}}
           </div>
-          <div class="tabs__caption">Camera</div>
       </div>
   {{/if}}
     <div class="tabs__item">

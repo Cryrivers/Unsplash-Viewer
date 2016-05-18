@@ -3,6 +3,10 @@
   padding-top: $header-bar-height + $tab-bar-height;
   &--loading {
     //grid loading
+    .picture-grid__item:not(.picture-grid__item--loading) {
+      opacity: 0.3;
+      pointer-events: none;
+    }
   }
   &__item {
     width: 200px;
@@ -11,6 +15,7 @@
     will-change: transform;
     &--loading {
       // item loading
+      pointer-events: none;
     }
     &__photo {
       width: 200px;

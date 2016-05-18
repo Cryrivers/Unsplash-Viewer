@@ -1,8 +1,17 @@
 {{#if platform.browser}}
-  <div class="header-bar__logo">
-      Heihei
-  </div>
+    <div class="header-bar__logo">
+        Heihei
+    </div>
 {{/if}}
 {{#if platform.electron}}
   {{window-buttons}}
+{{/if}}
+{{#if (or platform.electron platform.cordova)}}
+  {{#liquid-bind routeName class='header-bar__actions'}}
+    {{#if (eq routeName 'detail')}}
+      {{#link-to 'index' class="header-bar__action-button"}}
+        {{inline-svg 'back'}} Back
+      {{/link-to}}
+    {{/if}}
+  {{/liquid-bind}}
 {{/if}}
