@@ -13,5 +13,10 @@ export default Ember.Route.extend({
       };
       preloadImage.src = url;
     });
+  },
+  activate() {
+    if (window.StatusBar) {
+      window.StatusBar.styleLightContent();
+    }
   }
 });

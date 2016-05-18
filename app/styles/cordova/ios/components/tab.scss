@@ -8,18 +8,28 @@
   background: fade-out(#f9f9f9, 0.15);
   backdrop-filter: blur(20px) saturate(2);
   border-top: 1px solid rgba(0, 0, 0, 0.2);
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.3 ease;
   display: flex;
   justify-content: space-around;
   z-index: 999999;
-  //html.route-detail & {
-  //  background: fade-out(#000, 0.4);
-  //}
+  html.route-detail & {
+    background: fade-out(#000, 0.4);
+    transform: translateY(100%);
+    &__icon {
+      svg {
+        fill: #bbb;
+      }
+    }
+    &__item {
+      color: #bbb;
+    }
+  }
   &__icon {
     svg {
       width: 24px;
       height: 24px;
       fill: #8c8c8c;
+      transition: fill 0.3s ease;
     }
   }
   &__item {
@@ -31,6 +41,7 @@
     font: -apple-system-body;
     font-size: 10px;
     color: #8c8c8c;
+    transition: color 0.3s ease;
     &.active {
       color: $theme-color;
       .tabs__icon svg{

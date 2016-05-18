@@ -3,7 +3,7 @@ import platform from './utils/platform';
 let transitionFunction;
 
 if (platform.isCordova()) {
-  transitionFunction = function() {
+  transitionFunction = function () {
     this.transition(
       this.fromRoute('index'),
       this.toRoute('detail'),
@@ -11,8 +11,8 @@ if (platform.isCordova()) {
       this.reverse('toRight')
     );
   };
-} else {
-  transitionFunction = function() {
+} else if (platform.isBrowser()) {
+  transitionFunction = function () {
     this.transition(
       this.fromRoute('index'),
       this.toRoute('detail'),
@@ -22,6 +22,15 @@ if (platform.isCordova()) {
       }, {
         use: ['fade', {duration: 300}]
       })
+    );
+  };
+} else if (platform.isElectron()) {
+  transitionFunction = function () {
+    this.transition(
+      this.fromRoute('index'),
+      this.toRoute('detail'),
+      this.use('exit-left', {duration: 800, easing: 'ease'}),
+      this.reverse('exit-right', {duration: 800, easing: 'ease'})
     );
   };
 }

@@ -50,6 +50,7 @@
     "ember-resolver": "^2.0.3",
     "emberfire": "1.6.6",
     "liquid-fire": "0.23.1",
+    "liquid-fire-ios": "0.1.0",
     "loader.js": "^4.0.1"
   },
   "main": "electron.js",
