@@ -1,7 +1,5 @@
 {{#if platform.browser}}
-    <div class="header-bar__logo">
-        Heihei
-    </div>
+    {{#link-to 'index' class="header-bar__logo"}}{{/link-to}}
 {{/if}}
 {{#if platform.electron}}
   {{window-buttons}}
