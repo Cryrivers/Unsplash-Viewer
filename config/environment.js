@@ -4,10 +4,8 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'wora',
     environment: environment,
-    contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com" },
-    firebase: 'https://flickering-heat-9279.firebaseio.com/',
-    baseURL: '/',
-    locationType: (process.env.EMBER_CLI_ELECTRON || process.env.EMBER_CORDOVA) ? 'hash' : 'auto',
+    rootURL: null,
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -31,7 +29,7 @@ module.exports = function(environment) {
 
   if (environment === 'test') {
     // Testem prefers this...
-    ENV.baseURL = '/';
+    
     ENV.locationType = 'none';
 
     // keep test console output quieter
@@ -42,7 +40,6 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
   }
 
   return ENV;
