@@ -1,11 +1,12 @@
 .window-buttons {
-  margin-left: 8px;
+  margin-top: 8px;
   order: -1000;
   min-width: 72px;
   width: 72px;
   flex-grow: 0;
   flex-shrink: 0;
   display: flex;
+  justify-content: center;
   &__button {
     -webkit-app-region: no-drag;
     display: inline-block;

@@ -1,6 +1,8 @@
 @import "../constants";
 .picture-grid {
-  padding-top: $header-bar-height + $tab-bar-height;
+  margin-left: $header-bar-width;
+  padding-top: $tab-bar-height;
+  background: #111;
   &--loading {
     //grid loading
     .picture-grid__item:not(.picture-grid__item--loading) {
@@ -23,7 +25,7 @@
       object-fit: cover;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      -webkit-box-reflect: below 0 linear-gradient(to top, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 20%);
+      // -webkit-box-reflect: below 0 linear-gradient(to top, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 20%);
     }
     &__meta {
       display: flex;

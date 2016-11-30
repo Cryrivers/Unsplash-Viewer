@@ -33,7 +33,7 @@ app.on('ready', function onReady() {
     frame: false,
     vibrancy: 'ultra-dark',
     webPreferences: {
-      blinkFeatures: 'CSSBoxReflectFilter'
+      blinkFeatures: 'CSSBackdropFilter,CSSBoxReflectFilter'
     }
   });
 

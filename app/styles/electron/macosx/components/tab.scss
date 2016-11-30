@@ -3,11 +3,13 @@
 .tabs {
   position: fixed;
   width: 100%;
-  top: $header-bar-height;
+  top: 0;
+  left: $header-bar-width;
   height: $tab-bar-height - 1px;
-  border-bottom: 1px solid #eee;
-  background: fade-out(#fff, 0.05);
+  border-bottom: 1px solid #090909;
+  background: fade-out(#111, 0.35);
   transition: background 0.3s ease, border 0.3s ease;
+  backdrop-filter: blur(10px) contrast(300%);
   display: flex;
   justify-content: center;
   align-items: center;
